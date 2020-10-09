@@ -1,10 +1,12 @@
 export const initialState = {
   user: null,
   playlists: [],
+  spotify: null,
+  discover_weekly: null,
+  top_artists: null,
   playing: false,
   item: null,
-  //token:
-  //'BQBRTSdpXYtBWDCkAslPOGRx1AdfQhB-UL_ASM5Qvs5h6Km455Y-jFw3JcgO8rnBKjsq1Yw0e1ckiPh1KvvDrJFCsSe7q8hPuifGV8GRd2_JL7y6Ok61iQ_xJ2cFNxu1oAXZ8669S1GR17ec2K-gIrXyTJHX',
+  
 };
 
 const reducer = (state, action) => {
@@ -17,51 +19,50 @@ const reducer = (state, action) => {
         user: action.user,
       };
 
+    case "SET_PLAYING":
+        return {
+          ...state,
+          playing: action.playing,
+        };
+
+   case "SET_ITEM":
+          return {
+            ...state,
+            item: action.item,
+          };
+
+    case "SET_DISCOVER_WEEKLY": 
+            return{
+              ...state,
+              discover_weekly: action.discover_weekly,
+            }
+    
+    case "SET_TOP_ARTISTS":
+              return {
+                ...state,
+                top_artists: action.top_artists,
+              };
+          
+
     case 'SET_TOKEN':
       return {
         ...state,
         token: action.token,
       };
 
-    case 'SET_PLAYLISTS': {
+
+   case "SET_SPOTIFY":
+        return {
+          ...state,
+          spotify: action.spotify,
+        };  
+
+   case 'SET_PLAYLISTS': 
       return {
         ...state,
         playlists: action.playlists
       };
-    }
-
-    case "SET_DISCOVER_WEEKLY": {
-      return{
-        ...state,
-        discover_weekly: action.discover_weekly,
-      }
-    }
-
-    case "SET_ITEM":
-        return {
-          ...state,
-          item: action.item,
-        };
-
-    case "SET_PLAYING":
-      return {
-        ...state,
-        playing: action.playing,
-      };
-   
-
-    case "SET_TOP_ARTISTS":
-          return {
-            ...state,
-            top_artists: action.top_artists,
-          };
-
-  case "SET_SPOTIFY":
-            return {
-              ...state,
-              spotify: action.spotify,
-            };
-    
+        
     default:
       return state;
   }
