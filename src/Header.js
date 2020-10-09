@@ -1,0 +1,24 @@
+import React from 'react';
+import SearchIcon from '@material-ui/icons/Search';
+import { Avatar } from '@material-ui/core';
+import './Header.css';
+
+function Header() {
+  return (
+    <div className="header">
+      <div className="header__left">
+        <SearchIcon />
+        <input
+          type="text"
+          placeholder="Search for artists, Songs or Podcasts"
+        />
+      </div>
+      <div className="header__right">
+        <Avatar src="" alt="JD" />
+        <h4>Jorge</h4>
+      </div>
+    </div>
+  );
+}
+
+export default Header;
