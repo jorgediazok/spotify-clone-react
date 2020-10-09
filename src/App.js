@@ -14,6 +14,7 @@ function App() {
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = '';
+    // @ts-ignore
     let _token = hash.access_token;
     if (_token) {
       dispatch({
@@ -27,15 +28,13 @@ function App() {
           type: 'SET_USER',
           user: user,
         });
-      });
-      
+      });      
       spotify.getMyTopArtists().then((response) =>
         dispatch({
           type: "SET_TOP_ARTISTS",
           top_artists: response,
         })
       );
-
       dispatch({
         type: "SET_SPOTIFY",
         spotify: spotify,

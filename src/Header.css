@@ -20,6 +20,11 @@
   width: 100%;
 }
 
+.header__left > input:focus {
+  border: none;
+  outline: none;
+}
+
 .header__right {
   display: flex;
   align-items: center;
