@@ -15,7 +15,15 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__left">
-        <h1>Album and song details</h1>
+        <img
+          className="footer__albumLogo"
+          src="https://upload.wikimedia.org/wikipedia/en/7/74/Usher_-_Confessions_album_cover.jpg"
+          alt=""
+        />
+        <div className="footer__songInfo">
+          <h4>Yeah!</h4>
+          <p>Usher</p>
+        </div>
       </div>
       <div className="footer__center">
         <ShuffleIcon className="footer__green" />
